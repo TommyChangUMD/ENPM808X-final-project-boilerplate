@@ -8,6 +8,7 @@ set -xue -o pipefail
 # 0. start from scratch
 ##############################
 rm -rf build/ install/
+source /opt/ros/humble/setup.bash
 
 ##############################
 # 1. Build for test coverage

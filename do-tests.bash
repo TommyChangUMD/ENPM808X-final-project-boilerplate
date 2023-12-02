@@ -54,7 +54,7 @@ if [[ -d $COMBINED_TEST_COVERAGE ]]; then
 fi
 mkdir $COMBINED_TEST_COVERAGE
 ## combine the reports
-ALL_COVERAGE_INFO=./build/test_converge_merged.info
+ALL_COVERAGE_INFO=./build/test_coverage_merged.info
 lcov -a $MY_MODEL_COVERAGE_INFO -a \
      $MY_CONTROLLER_COVERAGE_INFO -o \
      $ALL_COVERAGE_INFO

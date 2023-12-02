@@ -71,14 +71,14 @@ First make sure we have run the unit test already.
 colcon test
 ```
 
-### Test coverage report for "my_controller":
+### Test coverage report for `my_controller`:
 
 ``` bash
 ros2 run my_controller generate_coverage_report.bash
 open build/my_controller/test_coverage/index.html
 ```
 
-### Test coverage report for "my_model":
+### Test coverage report for `my_model`:
 
 ``` bash
 colcon build \

@@ -62,20 +62,20 @@ colcon test
 
 ## How to generate coverage reports after running colcon test
 
-First make sure we hav run the unit test already.
+First make sure we have run the unit test already.
 
 ```bash
 colcon test
 ```
 
-### my_controller coverage report:
+### Test coverage report for "my_controller":
 
 ``` bash
 ros2 run my_controller generate_coverage_report.bash
 open build/my_controller/test_coverage/index.html
 ```
 
-### my_model coverage report:
+### Test coverage report for "my_model":
 
 ``` bash
 colcon build \
@@ -86,7 +86,7 @@ colcon build \
 open build/my_model/test_coverage/index.html
 ```
 
-### combined coverage report
+### combined test coverage report
 
 ``` bash
 ./do-tests.bash

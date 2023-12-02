@@ -60,4 +60,4 @@ genhtml --output-dir $COMBINED_TEST_COVERAGE \
 ##############################
 # 6. show the combined coverage report
 ##############################
-open $COMBINED_TEST_COVERAGE/index.html
+open $COMBINED_TEST_COVERAGE/index.html || true

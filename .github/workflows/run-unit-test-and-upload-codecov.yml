@@ -1,0 +1,65 @@
+##############################################################################
+#
+# GitGub CI workflow syntax spec:
+#    https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
+#
+# CodeCov github action setup:
+#    https://github.com/codecov/codecov-action
+#
+# CodeCov badge setup:
+#    https://docs.codecov.com/docs/status-badges
+#
+# version 1.1
+##############################################################################
+
+name: Run Unit Test and Upload Coverage Report
+
+on:
+  # Triggered whenever push to main 
+  push:
+    branches: [ "main" ]
+
+  # Triggered whenever a pull request is created on main
+  pull_request:
+    branches: [ "main" ]
+    types: [opened]
+
+  # Allow manual trigger
+  workflow_dispatch:
+
+jobs:
+  build-run-upload:
+    # Create a container of the latest Ubuntu, other values could be
+    # ubuntu-latest, ubuntu-22.04, etc.
+    runs-on: osrf/ros:humble-desktop
+    
+    steps:
+      # We want to use GitHub CI checkout version 3 to check out our branch
+      - uses: actions/checkout@v3
+      
+      # Install some system pacakges
+      - name: Install build packages
+        run: |
+          sudo apt update
+          sudo apt install -y software-properties-common
+          sudo apt install -y doxygen lcov gcovr
+          
+      # Run integration test (level 2 unit test)
+      - name: Run integration test (level 2 unit test)
+        run: |
+          ./do-integration-test.bash
+          
+      # Run unit test, and generate coverage report
+      - name: Build, run unit test, and generate coverage report
+        run: |
+          ./do-tests.bash
+
+      # Upload coverage result to CodeCov
+      - name: Upload coverage result to CodeCov
+        uses: codecov/codecov-action@v3
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
+          files: ${{github.workspace}}/build/my_model/test_coverage.info, ${{github.workspace}}/build/my_controller/test_coverage.info
+          fail_ci_if_error: true # optional (default = false)
+          verbose: true # optional (default = false)      
+          

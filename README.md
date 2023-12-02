@@ -98,6 +98,6 @@ open build/my_model/test_coverage/index.html
 
   https://about.codecov.io/sign-up/
 
-### Then, follow the similar instruction in the cpp-boilerplate-v2 repo
+### Then, follow the similar instruction provided in the cpp-boilerplate-v2 repo
 
   https://github.com/TommyChangUMD/cpp-boilerplate-v2

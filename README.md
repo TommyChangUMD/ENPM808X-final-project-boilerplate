@@ -24,7 +24,7 @@ This repo provides a template for setting up:
   - ROS2 launch file
   - bash scripts so they can be invoked by issuing the "ros2 run ..." command
   
-## How to see package dependency graph
+## How to generate package dependency graph
 
 ``` bash
 colcon graph --dot | dot -Tpng -o depGraph.png

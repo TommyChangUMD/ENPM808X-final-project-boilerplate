@@ -48,7 +48,7 @@ jobs:
   build-run-upload:
     # Create a container of the latest Ubuntu, other values could be
     # ubuntu-latest, ubuntu-22.04, etc.
-    runs-on: ubuntu-18.04       # any ubuntu that has docker
+    runs-on: ubuntu-latest       # any ubuntu that has docker
     defaults:
       run:
         shell: bash       # specify bash for use with docker container

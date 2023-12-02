@@ -12,3 +12,13 @@ simple.  It makes system() calls with the following assumption:
 For a more portable ROS2 integration test framework, consider using catch_ros2:
 
   https://github.com/ngmor/catch_ros2
+
+
+This ROS2 package depends on the "my_model" module.  This dependency
+is specified in the package's package.xml file:
+
+```
+  <depend>my_model</depend>
+```
+
+

@@ -34,13 +34,16 @@ function signal_handler {
     echo "You have pressed control-c $N/3 times"
     if [[ $N == "3" ]]; then
         echo "Bye"
-        exit 0;
+        # Clean all processes in this procees grouop (including itself)
+        kill -9 -$$
     fi
     N=$(( N + 1 ))
 }
 trap signal_handler SIGINT 
 
-# 4.) Child process
+# 4.) Child processees
+sleep 1000&
+sleep 1000&
 sleep 1000&
 
 # 5.) Wait for all children to exit

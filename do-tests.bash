@@ -8,7 +8,9 @@ set -xue -o pipefail
 # 0. start from scratch
 ##############################
 rm -rf build/ install/
+set +u                          # stop checking undefined variable  
 source /opt/ros/humble/setup.bash
+set -u                          # re-enable undefined variable check
 
 ##############################
 # 1. Build for test coverage

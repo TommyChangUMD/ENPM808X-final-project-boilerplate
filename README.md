@@ -60,13 +60,36 @@ source install/setup.bash
 colcon test
 ```
 
-## How to generate coverage reports
-### my_controller
+## How to generate coverage reports after running colcon test
+
+First make sure we hav run the unit test already.
+
+```bash
+colcon test
+```
+
+### my_controller coverage report:
 
 ``` bash
 ros2 run my_controller generate_coverage_report.bash
-open build/my_controller//my_controller/test_coverage/index.html
+open build/my_controller/test_coverage/index.html
+```
 
+### my_model coverage report:
+
+``` bash
+colcon build \
+       --event-handlers console_cohesion+ \
+       --packages-select my_model \
+       --cmake-target "test_coverage" \
+       --cmake-arg -DUNIT_TEST_ALREADY_RAN=1
+open build/my_model/test_coverage/index.html
+```
+
+### combined coverage report
+
+``` bash
+./do-tests.bash
 ```
 
 ## How to use GitHub CI to upload coverage report to Codecov

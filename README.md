@@ -24,7 +24,7 @@ This repo provides a template for setting up:
   - ROS2 launch file
   - bash scripts so they can be invoked by issuing the "ros2 run ..." command
   
-## How to see package dependency graph
+## How to generate package dependency graph
 
 ``` bash
 colcon graph --dot | dot -Tpng -o depGraph.png
@@ -62,20 +62,20 @@ colcon test
 
 ## How to generate coverage reports after running colcon test
 
-First make sure we hav run the unit test already.
+First make sure we have run the unit test already.
 
 ```bash
 colcon test
 ```
 
-### my_controller coverage report:
+### Test coverage report for "my_controller":
 
 ``` bash
 ros2 run my_controller generate_coverage_report.bash
 open build/my_controller/test_coverage/index.html
 ```
 
-### my_model coverage report:
+### Test coverage report for "my_model":
 
 ``` bash
 colcon build \
@@ -86,7 +86,7 @@ colcon build \
 open build/my_model/test_coverage/index.html
 ```
 
-### combined coverage report
+### combined test coverage report
 
 ``` bash
 ./do-tests.bash
@@ -98,6 +98,6 @@ open build/my_model/test_coverage/index.html
 
   https://about.codecov.io/sign-up/
 
-### Then, follow the similar instruction in the cpp-boilerplate-v2 repo
+### Then, follow the similar instruction provided in the cpp-boilerplate-v2 repo
 
   https://github.com/TommyChangUMD/cpp-boilerplate-v2

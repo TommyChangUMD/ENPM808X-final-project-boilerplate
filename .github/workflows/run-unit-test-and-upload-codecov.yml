@@ -65,12 +65,7 @@ jobs:
           sudo apt install -y software-properties-common
           sudo apt install -y doxygen lcov gcovr
           
-      # Run integration test (level 2 unit test)
-      - name: Run integration test (level 2 unit test)
-        run: |
-          ./do-integration-test.bash
-          
-      # Run unit test, and generate coverage report
+      # Run all unit test, integration test, and generate combined coverage report
       - name: Build, run unit test, and generate coverage report
         run: |
           ./do-tests.bash

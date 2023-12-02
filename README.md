@@ -11,18 +11,18 @@ This repo provides a template for setting up:
   - Codecov badges
   - Colcon workspace structure
   - C++ library that depends on other system libraries such as OpenCV.
-    - The library is *self-contained and does not depend on ROS.*
-  - ROS 2 package that depends on a C++ library built in the same colcon workspace
+    - The library is *self-contained and does not depend on ROS or colcon in general.*
+  - ROS 2 package that depends on a C++ library is also placed in the same colcon workspace.
   - Establishing package dependency within the colcon workspace.
-    - ie. the ROS 2 package will never be built first before the dependent C++ library
-  - Multiple subscription within a ROS2 node all listening to the same topic.
+    - ie. the ROS 2 package will not be built before all of its dependent C++ libraries are built first
+  - Multiple subscriptions within a ROS2 node all listening to the same topic.
     - Only one callback function is needed.
     - More efficient than to have N callback functions.
     - More efficient than to have N ROS nodes.
-  - unit test and integration test
+  - Unit test and integration test.
   - Doxygen setup
   - ROS2 launch file
-  - bash scripts so they can be invoked by issuing the "ros2 run ..." command
+  - Bash scripts that can be invoked by the "ros2 run ..." command
   
 ## How to generate package dependency graph
 

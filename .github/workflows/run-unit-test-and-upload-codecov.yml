@@ -75,7 +75,7 @@ jobs:
         uses: codecov/codecov-action@v3
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # not required for public repos
-          files: ${{github.workspace}}/build/my_model/test_coverage.info, ${{github.workspace}}/build/my_controller/test_coverage.info
+          files: ${{github.workspace}}/build/my_model/test_coverage.info,${{github.workspace}}/build/my_controller/test_coverage.info
           fail_ci_if_error: true # optional (default = false)
           verbose: true # optional (default = false)      
           

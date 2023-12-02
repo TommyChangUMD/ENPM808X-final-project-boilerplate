@@ -46,10 +46,13 @@ mv $BUILD_DIR/coverage_cleaned.info $BUILD_DIR/test_coverage.info
 # 4.) Finally generate the coverage report
 rm -rf $BUILD_DIR/ROS_PACKAGE_NAME/test_coverage/
 genhtml --output-directory \
-        $BUILD_DIR/$ROS_PACKAGE_NAME/test_coverage \
+        $BUILD_DIR/test_coverage \
         $BUILD_DIR/test_coverage.info 
 echo "Code Coverage generated:"
 echo "     $BUILD_DIR/test_coverage.info"
-echo "     $BUILD_DIR/$ROS_PACKAGE_NAME/test_coverage/index.html"
+echo "     $BUILD_DIR/test_coverage/index.html"
+echo
+echo "To view the report, do:"
+echo "   open $BUILD_DIR/test_coverage/index.html"
 
 

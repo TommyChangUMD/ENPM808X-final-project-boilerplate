@@ -1,9 +1,10 @@
-#include "rclcpp/logger.hpp"
-#include "rclcpp/typesupport_helpers.hpp"
+
+// openCV stuff
 #include <opencv2/imgproc.hpp>
 #include <opencv2/highgui.hpp>
 #include <opencv2/videoio.hpp>
 
+// rclcpp stuff
 #include <rclcpp/logging.hpp>
 
 

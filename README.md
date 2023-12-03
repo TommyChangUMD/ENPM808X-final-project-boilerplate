@@ -10,8 +10,8 @@ This repo provides a template for setting up:
     - "main" branch runs in a ROS 2 Humble container
   - Codecov badges
   - Colcon workspace structure
-  - C++ library that depends on other system libraries such as OpenCV.
-    - The library is *self-contained and does not depend on ROS.*
+  - C++ library that depends on other system libraries such as OpenCV and rclcpp.
+    - The library is *self-contained*
     - In real life, we download source code of third-party modules all
       the time and often just stick the modules as-is into our colcon
       workspace.

@@ -8,7 +8,7 @@ set -ue -o pipefail
 # 0. check needed software
 ###############################
 if (! which pandoc ); then
-    echo "Please insall pandoc first. Try:"
+    echo "Please install pandoc first. Try:"
     echo "  sudo apt install pandoc"
     exit 1
 fi
@@ -42,19 +42,6 @@ colcon build \
 # 4. combine all docs
 ###############################
 DOCS_DIR=src/docs/
-mkdir -p $DOCS_DIR
-cat << "EOF" > $DOCS_DIR/index.md
-# ENPM808X Final Project Documentation 
-
-Welcome to ENPM808X final project page.  
-
-Here, you will find all the documentation for this project:
-
-* [my_model](../my_model/docs/html/index.html)
-* [my_controller](../my_controller/docs/html/index.html)
-
-Have a nice day.
-EOF
 pandoc -f markdown $DOCS_DIR/index.md > $DOCS_DIR/index.html
 open $DOCS_DIR/index.html || true
 

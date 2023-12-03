@@ -23,6 +23,7 @@ execute_process(COMMAND cmake -E create_symlink
 find_package(OpenCV REQUIRED)
 find_package(GTest REQUIRED)
 find_package(Doxygen REQUIRED)
+find_package(rclcpp REQUIRED)   # allow ROScpp library 
 
 
 ############################################
@@ -135,6 +136,7 @@ target_include_directories (my_model PUBLIC
     $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>  
     $<INSTALL_INTERFACE:include> 
     PUBLIC ${OpenCV_INCLUDE_DIRS}
+    PUBLIC ${rclcpp_INCLUDE_DIRS}
     ) 
 
 # Specify where the associated libraries are
@@ -142,6 +144,7 @@ target_include_directories (my_model PUBLIC
 target_link_libraries(my_model
   # list of libraries
   ${OpenCV_LIBRARIES}
+  ${rclcpp_LIBRARIES}
   )
 
 

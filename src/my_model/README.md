@@ -7,7 +7,7 @@ A stand-alone C++ library using:
 - CMake
 - GoogleTest
 - OpenCV
-
+- rclcpp
 
 ## Standard install via command-line
 ```bash

@@ -62,13 +62,13 @@ jobs:
       - name: Install build packages
         run: |
           sudo apt update
-          sudo apt install -y software-properties-common
-          sudo apt install -y doxygen lcov gcovr
+          sudo apt install -y doxygen lcov gcovr pandoc
           
       # Run all unit test, integration test, and generate combined coverage report
       - name: Build, run unit test, and generate coverage report
         run: |
           ./do-tests.bash
+          ./do-docs.bash
 
       # Upload coverage result to CodeCov
       - name: Upload coverage result to CodeCov
